@@ -7,7 +7,9 @@ function Dashboard() {
   const handleLogout = async () => {
     try {
       await logoutUser();
+
       alert("Logged out successfully!");
+
       navigate("/login");
     } catch (error) {
       alert(error.message);
@@ -16,27 +18,59 @@ function Dashboard() {
 
   return (
     <div>
-      <h1>Dashboard</h1>
+      <h1>Hobby & Skills Tracker</h1>
 
-      <p>Welcome to Hobby & Skills Tracker!</p>
+      <p>
+        Welcome to your personal hobby and skills dashboard!
+      </p>
+
+      <hr />
 
       <h2>My Hobbies & Skills</h2>
 
       <button onClick={() => navigate("/profile")}>
-        My Profile
+        👤 My Profile
       </button>
 
-      <button>Add Hobby</button>
+      <br />
+      <br />
 
-      <button>Practice</button>
-
-      <button>Community</button>
+      <button onClick={() => navigate("/hobby")}>
+        ➕ Add Hobby & Skill
+      </button>
 
       <br />
       <br />
+
+      <button onClick={() => navigate("/progress")}>
+        📈 Practice & Progress
+      </button>
+
+      <br />
+      <br />
+
+      <button onClick={() => navigate("/community")}>
+        🌐 Community
+      </button>
+
+      <br />
+      <br />
+
+      <button onClick={() => navigate("/analytics")}>
+        📊 Analytics
+      </button>
+
+      <br />
+      <br />
+
+      <button onClick={() => navigate("/cloud-files")}>
+        ☁️ Cloud Files
+      </button>
+
+      <hr />
 
       <button onClick={handleLogout}>
-        Logout
+        🚪 Logout
       </button>
     </div>
   );
